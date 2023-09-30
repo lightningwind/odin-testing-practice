@@ -1,0 +1,22 @@
+{
+  "name": "odin-testing-practice",
+  "version": "1.0.0",
+  "description": "Testing practice with Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightningwind/odin-testing-practice.git"
+  },
+  "author": "David Islam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lightningwind/odin-testing-practice/issues"
+  },
+  "homepage": "https://github.com/lightningwind/odin-testing-practice#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
