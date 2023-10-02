@@ -1,4 +1,4 @@
-const { capitalize, reverseString } = require('../src/index');
+const { capitalize, reverseString, calculator } = require('../src/index');
 
 describe('capitalize', () => {
   test('Capitalizes the first character in a string', () => {
@@ -26,3 +26,18 @@ describe('reverseString', () => {
     expect(reverseString('')).toBe('');
   })
 });
+
+describe('calculator', () => {
+  test('add', () => {
+    expect(calculator.add(2, 2)).toBe(4);
+  });
+  test('subtract', () => {
+    expect(calculator.subtract(5, 2)).toBe(3);
+  });
+  test('multiply', () => {
+    expect(calculator.multiply(5, 5)).toBe(25);
+  });
+  test('divide', () => {
+    expect(calculator.divide(10, 2)).toBe(5);
+  });
+})
