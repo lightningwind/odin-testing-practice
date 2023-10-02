@@ -6,7 +6,7 @@ function capitalize(str) {
 
 /* Returns the given string <str> in reverse order. */
 function reverseString(str) {
-
+  return str.split('').reverse().join('');
 }
 
 module.exports = {capitalize, reverseString};
