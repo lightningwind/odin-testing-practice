@@ -1,4 +1,4 @@
-const { capitalize, reverseString, calculator } = require('../src/index');
+const { capitalize, reverseString, calculator, caesarCipher } = require('../src/index');
 
 describe('capitalize', () => {
   test('Capitalizes the first character in a string', () => {
@@ -39,5 +39,20 @@ describe('calculator', () => {
   });
   test('divide', () => {
     expect(calculator.divide(10, 2)).toBe(5);
+  });
+})
+
+describe('caesarCipher', () => {
+  test('happy path', () => {
+    expect(caesarCipher('defend the east wall of the castle', 1)).toBe('efgfoe uif fbtu xbmm pg uif dbtumf');
+  });
+  test('wrapping from z to a', () => {
+    expect(caesarCipher('zebra', 3)).toBe('cheud');
+  });
+  test('keeping the same case', () => {
+    expect(caesarCipher('Attack at Dawn', 5)).toBe('Fyyfhp fy Ifbs');
+  });
+  test('punctuation marks do not change', () => {
+    expect(caesarCipher('Hello World!!!')).toBe('Khoor Zruog!!!');
   });
 })
