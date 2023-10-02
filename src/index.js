@@ -1,9 +1,12 @@
-import _ from 'lodash';
-
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  return element;
+/* Returns the given string <str> with the first
+letter capitalized. */
+function capitalize(str) {
+  return str.length === 0 ? '' : `${str[0].toUpperCase()}${str.substring(1)}`;
 }
 
-document.body.appendChild(component());
+/* Returns the given string <str> in reverse order. */
+function reverseString(str) {
+
+}
+
+module.exports = {capitalize, reverseString};
