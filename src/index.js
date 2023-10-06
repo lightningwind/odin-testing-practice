@@ -19,19 +19,29 @@ const calculator = {
 /* Returns the given string <str> with each character
 rotated by <shift> amount. */
 function caesarCipher(str, shift) {
-  /*
-  Algorithm:
-    1) Ignoring non-alphabets, translate each letter in string <str> into
-    a number using ASCII
-    2) For each translated letter <x>, apply the encryption function
-    e(x) = x + k (mod 52), where k = <shift>
-    3) Finally translate each number back into a letter
-  */
   const charCodes = [];
+  const encrypt = (x, k, n) => ((x - n) + k) % 26 + n;
+
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     const code = str.charCodeAt(i); // UTF-16 code unit
+    const regex = /[a-z]/i;
+    if (char.match(regex)) {
+      if (65 <= code && code <= 90) { // Uppercase letter
+        charCodes.push(encrypt(code, shift, 65));
+      } else if (97 <= code && code <= 122) { // Lowercase letter
+        charCodes.push(encrypt(code, shift, 97));
+      }
+    } else { 
+      charCodes.push(code);
+    }
   }
+
+  // String.fromCharCode(): This sweet method returns a string created from
+  // the specified sequence of UTF-16 code units
+  // Here we are using spread syntax to expand the array <charCodes> into
+  // its individual elements being supplied as arguments
+  return String.fromCharCode(...charCodes);
 }
 
 module.exports = {capitalize, reverseString, calculator, caesarCipher};

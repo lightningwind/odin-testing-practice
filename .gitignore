@@ -1,2 +1,4 @@
 node_modules
 notes.txt
+./dist/main.js
+./dist/main.js.LICENSE.txt

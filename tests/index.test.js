@@ -53,6 +53,6 @@ describe('caesarCipher', () => {
     expect(caesarCipher('Attack at Dawn', 5)).toBe('Fyyfhp fy Ifbs');
   });
   test('punctuation marks do not change', () => {
-    expect(caesarCipher('Hello World!!!')).toBe('Khoor Zruog!!!');
+    expect(caesarCipher('Hello World!!!', 3)).toBe('Khoor Zruog!!!');
   });
 })
