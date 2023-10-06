@@ -44,4 +44,24 @@ function caesarCipher(str, shift) {
   return String.fromCharCode(...charCodes);
 }
 
-module.exports = {capitalize, reverseString, calculator, caesarCipher};
+/* Returns an object with the following properties about
+integer array <nums>: <average>, <min>, <max>, and <length>. */
+function analyzeArray(nums) {
+  if (nums.length === 0) {
+    return {};
+  }
+
+  const average = (nums) => {
+    const sum = nums.reduce((rs, cur) => rs + cur, 0);
+    return sum / nums.length;
+  }
+  
+  return {
+    average: average(nums),
+    min: Math.min(...nums),
+    max: Math.max(...nums),
+    length: nums.length,
+  };
+}
+
+module.exports = {capitalize, reverseString, calculator, caesarCipher, analyzeArray};
